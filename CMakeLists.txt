@@ -145,6 +145,7 @@ endif()
 
 if(NOT EMSCRIPTEN AND NOT OPTION_DEDICATED)
     find_package(OpenGL COMPONENTS OpenGL)
+    find_package(Vulkan COMPONENTS Vulkan)
 endif()
 
 if(MSVC)
@@ -266,6 +267,7 @@ if(NOT OPTION_DEDICATED)
         message(STATUS "OpenGL found -- -DWITH_OPENGL -- (via SDL2)")
     else()
         link_package(OpenGL TARGET OpenGL::GL)
+        link_package(Vulkan TARGET vulkan::vulkan)
     endif()
 endif()
 
